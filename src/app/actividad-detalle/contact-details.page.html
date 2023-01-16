@@ -1,0 +1,50 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Actividades" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="primary" *ngIf="contact" [routerLink]="'/update-contact/' + contact.id">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="contact">
+
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-thumbnail class="user-image">
+        <img class="container ion-text-center" src="assets/act.png">
+      </ion-thumbnail>
+      <ion-card-title class="ion-text-center">ACTIVIDADES A EDITAR</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-row>
+        <ion-col class="content-col">
+          <ion-text color="dark">
+          </ion-text>
+    
+          <ion-list>
+            <ion-item>
+              <ion-label position="stacked">Titulo</ion-label>
+              <ion-input color="primary" readonly="true">{{contact.firstName}}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Actividad</ion-label>
+              <ion-input color="primary" readonly="true">{{contact.lastName}}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Categoria</ion-label>
+              <ion-input color="primary" readonly="true">{{contact.category}}</ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>    </ion-card-content>
+  </ion-card>
+
+</ion-content>

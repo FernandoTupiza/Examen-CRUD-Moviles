@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-header>
+    <ion-toolbar color="primary">
+        <!-- <ion-avatar slot="start" class="avatarChat">
+          <img alt="Silhouette of a person's head" src="https://pbs.twimg.com/profile_images/1082827529734553600/9GDYcEPg_400x400.jpg" />
+        </ion-avatar> -->
+      <ion-title class="ion-text-center">Examen CRUD</ion-title>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" (click)="logOut()">
+          <ion-icon name="exit" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://cdn-icons-png.flaticon.com/512/8103/8103784.png" style="width: 2cm;"/>
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-center">LISTA DE ACTIVIDADES</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-buttons class="my-button">
+        <ion-button (click)="openNewContactModal()" style="background-color: rgb(22, 168, 212); border-radius: 50%;" >
+          <ion-icon slot="icon-only" style="color: azure;" name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-header collapse="condense" class="ion-no-border">
+        <ion-toolbar>
+          <ion-title size="large">Actividad</ion-title>
+          <ion-buttons collapse="true" slot="end">
+            <ion-button color="primary" (click)="openNewContactModal()">
+              <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-list>
+        <ion-item *ngFor="let contact of contacts | async" [routerLink]="'/contact-details/' + contact.id">
+          <ion-label style="color: rgb(22, 168, 212);">{{ contact.firstName }}  </ion-label>
+          <ion-label>{{ contact.lastName }}</ion-label>
+          <ion-label>{{contact.category}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

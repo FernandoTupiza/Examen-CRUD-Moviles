@@ -1,0 +1,7 @@
+{
+  "name": "firebase-database-tutorial",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

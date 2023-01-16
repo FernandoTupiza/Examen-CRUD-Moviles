@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>REGISTRO DE UNA NUEVA ACTIVIDAD</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="primary" (click)="dismissModal()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button color="primary" [disabled]="!createContactForm.valid" (click)="submitForm()">
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-thumbnail class="user-image">
+        <img class="container ion-text-center" src="assets/new.png">
+      </ion-thumbnail>
+      <ion-card-title>CREA UNA NUEVA ACTIVIDAD</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="createContactForm" #createForm="ngForm" (ngSubmit)="createContact(createContactForm.value)">
+        <ion-list>
+          <ion-item>
+            <ion-input placeholder="Titulo" inputMode="text" clearInput="true" formControlName="firstName" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Actividad" inputMode="text" clearInput="true" formControlName="lastName" required></ion-input>
+          </ion-item>
+          <!-- <ion-datetime placeholder="Fecha de Entrega" locale="es-ES"></ion-datetime>
+          <ion-item>
+            <ion-input placeholder="Materia" inputMode="tel" clearInput="true" formControlName="phone" required></ion-input>
+          </ion-item> -->
+          <ion-item>
+            <ion-label>Prioridad</ion-label>
+            <ion-select placeholder="Seleccione una" formControlName="category">
+              <ion-select-option value="Alta">Alta</ion-select-option>
+              <ion-select-option value="Media">Media</ion-select-option>
+              <ion-select-option value="Baja">Baja</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </form>  </ion-card-content>
+  </ion-card>
+  
+
+
+</ion-content>
+
